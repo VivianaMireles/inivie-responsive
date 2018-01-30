@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Precios de tus mejores guitarras!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <!--Es la area visible del navegador-->
+  </head>
+  <body class="precios">
+    <header id="header" class="header background">
+      <div class="contenedor">
+        <figure class="logotipo"> <!--logotipo-->
+          <img src="img/invie.png" alt="Invie logotipo" width="186" height="60">
+        </figure>
+        <span id="burguer-button" class="burguer-button icon-menu"></span>
+        <nav class="menu" id="menu"><!--menu-->
+          <ul>
+            <li>
+              <a href="invie.html"> Home</a>
+            </li>
+            <li>
+              <a href="invie.html#guitarras"> Guitarras</a>
+            </li>
+            <li>
+              <a href="precios.html"> Precios</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="tabla">
+      <div class="contenedor">
+        <table>
+          <thead>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Inivie Acústica</td>
+              <td>$100,000</td>
+              <td>Una Guitarra muy PRO</td>
+              <td>Inivie Acústica</td>
+              <td>$100,000</td>
+              <td>Una Guitarra muy PRO</td>
+            </tr>
+            <tr>
+              <td>Invie  Classic</td>
+              <td>$100,000</td>
+              <td>Una Guitarra muy PRO</td>
+              <td>Invie  Classic</td>
+              <td>$100,000</td>
+              <td>Una Guitarra muy PRO</td>
+            </tr>
+            <tr>
+              <td>Inivie Custom</td>
+              <td>$100,000</td>
+              <td>Una Guitarra muy PRO</td>
+              <td>Invie  Classic</td>
+              <td>$100,000</td>
+              <td>Una Guitarra muy PRO</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="contacto">
+          <img src="img/invie-white.png" alt="logotipoBlanco" >
+          <a href="tel:+573024456678"> <strong>Telefono</strong><span>3024456678</span></a>
+          <a href="mailto:contacto@inivie.com"> <strong>E-mail</strong><span>contacto@inivie.com</span></a>
+        </div>
+        <div class="formulario">
+          <form class="formulario" method="post">
+            <div class="col1">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required>
+              <div class="sexo">
+                <label for="mujer">
+                  <input type="radio" checked name="sexo" id="mujer" value="mujer">Mujer
+                </label>
+                <label for="hombre">
+                  <input type="radio" name="sexo" id="hombre" value="hombre">Hombre
+                </label>
+              </div>
+              <div class="intereses">
+                <label for="cotizacion">
+                  <input type="checkbox" checked name="" value="" id="cotizacion" value="cotizacion">Cotización
+                </label>
+                <label for="reclamos">
+                  <input type="checkbox" name="" value="" id="reclamos" value="reclamos">Reclamos
+                </label>
+                <label for="comentarios">
+                  <input type="checkbox" name="" value="" id="comentarios" value="comentarios">Comentarios
+                </label>
+                <label for="otros">
+                  <input type="checkbox" name="" value="" id="otros" value="otros">Otros
+                </label>
+              </div>
+            </div>
+            <div class="col2">
+              <label for="comentario">Comentarios</label>
+              <textarea name="comentario" rows="7" cols="30" id="comentario"></textarea>
+              <input type="submit" name="" value="Enviar" class="button">
+            </div>
+          </form>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      let $burguerButton = document.getElementById("burguer-button");
+      let $menu = document.getElementById("menu");
+
+
+      /*window.matchMedia('(max-width: 500px)') lo ejecutamos y veremos ahi la de matches*/
+      let consulta = window.matchMedia('(max-width: 500px)');/*la mediaQuery que queremos que se ejecute*/
+      consulta.addListener(mediaQuery); /*llama al evento*/
+
+      function mediaQuery(){
+        if (consulta.matches) {/*ver el estilo se ejecuta*/
+          $burguerButton.addEventListener('touchstart',toggleMenu);
+        }else {
+          $burguerButton.removeEventListener('touchstart',toggleMenu);
+          console.log("No se cumplio");
+        }
+      }
+
+      mediaQuery();
+
+      function toggleMenu(){
+        $menu.classList.toggle('active'); /*agrega y se la quita*/
+      }
+
+    </script>
+  </body>
+</html>
